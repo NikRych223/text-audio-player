@@ -115,10 +115,10 @@ namespace IdiotProjectOne
                     if (userInpit == "s")
                     {
                         outputDevice.Stop();
-                        audioFile.Close();
                     }
                 }
 
+                audioFile.Close();
                 MainMenu();
 
             } catch(Exception exception)
