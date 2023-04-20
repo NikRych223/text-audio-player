@@ -98,9 +98,9 @@ namespace IdiotProjectOne
                 } while (!File.Exists(urlToFile));
 
                 byte[] fileData = Convert.FromBase64String(File.ReadAllText(urlToFile));
-                File.WriteAllBytes("\\tempFile.mp3", fileData);
+                File.WriteAllBytes("tempFile.mp3", fileData);
 
-                var audioFile = new AudioFileReader("\\tempFile.mp3");
+                var audioFile = new AudioFileReader("tempFile.mp3");
                 var outputDevice = new WaveOutEvent();
 
                 outputDevice.Init(audioFile);
@@ -115,6 +115,7 @@ namespace IdiotProjectOne
                     if (userInpit == "s")
                     {
                         outputDevice.Stop();
+                        audioFile.Close();
                     }
                 }
 
