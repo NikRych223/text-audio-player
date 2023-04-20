@@ -15,9 +15,7 @@ namespace IdiotProjectOne
             Console.WriteLine("| Welcome to text file Player! |");
             Console.WriteLine("--------------------------------");
 
-            bool menuFlag = true;
-
-            while (menuFlag)
+            while (true)
             {
                 Console.Write("\n(1) - audio to file\n(2) - play text file\n(E) - exit\n\nYour chose: ");
                 string menuInput;
@@ -28,13 +26,11 @@ namespace IdiotProjectOne
 
                 if (menuInput == "1")
                 {
-                    menuFlag = false;
                     ConvertAudioToFile();
                 }
 
                 if (menuInput == "2")
                 {
-                    menuFlag = false;
                     PlayTextFile();
                 }
 
@@ -76,7 +72,7 @@ namespace IdiotProjectOne
                 do
                 {
                     urlToSave = Console.ReadLine();
-                } while (!Path.Exists(urlToSave));
+                } while (urlToSave == null);
 
                 File.WriteAllText(urlToSave, Convert.ToBase64String(fileData));
                 Console.WriteLine($"Your text file save in: {urlToSave}");
