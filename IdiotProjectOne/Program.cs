@@ -41,7 +41,7 @@ namespace IdiotProjectOne
             }
         }
 
-        static void ConvertAudioToFile() 
+        static void ConvertAudioToFile()
         {
             try
             {
@@ -79,7 +79,8 @@ namespace IdiotProjectOne
 
                 MainMenu();
 
-            } catch (Exception exception)
+            }
+            catch (Exception exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -121,7 +122,8 @@ namespace IdiotProjectOne
                 audioFile.Close();
                 MainMenu();
 
-            } catch(Exception exception)
+            }
+            catch (Exception exception)
             {
                 Console.WriteLine(exception.Message);
             }
